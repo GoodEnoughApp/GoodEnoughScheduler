@@ -5,11 +5,14 @@ Scheduler is used to run a task everyday. Scheduler is going to send an email th
 
 ## 🚀 Run:
 To run the project you need the following:
-You will need to first install all the dependencies by running this command
-$ npm ci
+You will need to first install all the dependencies by running this command:
+
+    $ npm ci
+  
 Then you will need an .env file to make sure all the configurations are in place to run the application
-Start the application using command
-$ npm start
+Start the application using command:
+
+    $ npm start
 
 
 ## 📋 Structure: 

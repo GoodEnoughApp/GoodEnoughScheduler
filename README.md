@@ -1,1 +1,24 @@
-# GoodEnoughScheduler
+ℹ️ About
+Scheduler is used to run a task everyday. Scheduler is going to send an email that contains a list of the products that are about to expire. Notifying the user everyday, three days before the expiration date.
+
+🚀 Run:
+To run the project you need the following:
+You will need to first install all the dependencies by running this command
+$ npm ci
+Then you will need an .env file to make sure all the configurations are in place to run the application
+Start the application using command
+$ npm start
+
+
+📋 Structure: 
+
+| Directories    | Description                                                                                                                      |
+| :------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| `/config`      | This directory contains database configuration file                                                                              |
+| `/data`        | This directory contains the database operations                                                                                  |
+| `/models`      | This directory contains all the sequelize definitions of the tables in the databse                                               |                                                                      |
+| `/views`       | This directory contains the handlebar file that has the design template for the email
+
+
+
+

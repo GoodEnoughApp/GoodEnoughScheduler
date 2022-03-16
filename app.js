@@ -1,0 +1,42 @@
+const express = require('express');
+const items = require('./data/items');
+require('dotenv').config();
+const http = require('http');
+const cron = require('node-cron');
+const app = express();
+
+
+app.use(express.urlencoded({ extended: true }));
+app.listen(process.env.PORT || 3000, () => {
+  console.log("We've now got a server!");
+startKeepAlive();
+});
+
+function startKeepAlive() {
+ // items.getitems();
+  setInterval(function() {
+      var options = {
+          host: 'goodenoughdev.herokuapp.com',
+          port: 80,
+          path: '/'
+      };
+      http.get(options, function(res) {
+        res.on('data', function() {
+            try {
+              sendEmail()
+            } catch (err) {
+                console.log(err.message);
+            }
+        });
+      }).on('error', function(err) {
+          console.log("Error: " + err.message);
+      });
+  }, 1 * 60 * 1000);
+}
+
+function sendEmail() {
+  // runs at 6 pm
+  cron.schedule('0 0 22 * * *', () => {
+    items.getitems();
+  });
+}

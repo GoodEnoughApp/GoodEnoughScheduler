@@ -1,7 +1,9 @@
-ℹ️ About
+## Good Enough Scheduler
+
+## ℹ️ About:
 Scheduler is used to run a task everyday. Scheduler is going to send an email that contains a list of the products that are about to expire. Notifying the user everyday, three days before the expiration date.
 
-🚀 Run:
+## 🚀 Run:
 To run the project you need the following:
 You will need to first install all the dependencies by running this command
 $ npm ci
@@ -10,7 +12,7 @@ Start the application using command
 $ npm start
 
 
-📋 Structure: 
+## 📋 Structure: 
 
 | Directories    | Description                                                                                                                      |
 | :------------- | :------------------------------------------------------------------------------------------------------------------------------- |

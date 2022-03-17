@@ -3,6 +3,14 @@
 ## ℹ️ About:
 Scheduler is used to run a task everyday. Scheduler is going to send an email that contains a list of the products that are about to expire. Notifying the user everyday, three days before the expiration date.
 
+## 🎯 Functionality:
+1- The is_used flag should be false for the notified item.
+
+2- The user should get notified for three days before the expiration date. 
+
+3- If the items are expired, they should be removed from the item table and added to the shopping list table.
+
+
 ## 🚀 Run:
 To run the project you need the following:
 You will need to first install all the dependencies by running this command:

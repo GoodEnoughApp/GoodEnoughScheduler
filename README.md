@@ -19,8 +19,8 @@ You will need to first install all the dependencies by running this command:
 
     $ npm ci
   
-Then you will need an .env file to make sure all the configurations are in place to run the application
-Start the application using command:
+Then you will need an .env file to make sure all the configurations are in place, to run the application
+Start the application using the following command:
 
     $ npm start
 

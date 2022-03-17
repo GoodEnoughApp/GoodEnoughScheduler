@@ -37,5 +37,5 @@ Run the application using the following command:
 | `/images`      | This directory contains the README file image                                                  |     
 
 ## 📐 Scheduler Architecture:
-<img src="https://raw.githubusercontent.com/GoodEnoughApp/GoodEnoughScheduler/dev/images/diagram.png" data-canonical-src="https://raw.githubusercontent.com/GoodEnoughApp/GoodEnoughScheduler/dev/images/diagram.png" width="600" height="600" />
+<img src="https://raw.githubusercontent.com/GoodEnoughApp/GoodEnoughScheduler/dev/images/diagram.png" data-canonical-src="https://raw.githubusercontent.com/GoodEnoughApp/GoodEnoughScheduler/dev/images/diagram.png" width="900" height="900" />
 

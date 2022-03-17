@@ -36,4 +36,5 @@ Run the application using the following command:
 
 
 ## 📐 Scheduler Architecture:
+<img src="https://raw.githubusercontent.com/GoodEnoughApp/GoodEnoughScheduler/dev/images/diagram.png" data-canonical-src="https://raw.githubusercontent.com/GoodEnoughApp/GoodEnoughScheduler/dev/images/diagram.png" width="600" height="600" />
 

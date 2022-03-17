@@ -5,15 +5,17 @@ const http = require('http');
 const cron = require('node-cron');
 const app = express();
 
-
-app.use(express.urlencoded({ extended: true }));
 app.listen(process.env.PORT || 3000, () => {
-  console.log("We've now got a server!");
+console.log("We've now got a server!");
 startKeepAlive();
+//items.getitems();
 });
 
 function startKeepAlive() {
- // items.getitems();
+ // Reference: https://stackoverflow.com/questions/5480337/easy-way-to-prevent-heroku-idling
+ // Ping request sent every minute to prevent the app from sleeping
+ // goodenoughdev --> Test , goodenoughbackend --> Production
+
   setInterval(function() {
       var options = {
           host: 'goodenoughdev.herokuapp.com',

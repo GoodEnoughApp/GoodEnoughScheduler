@@ -5,6 +5,7 @@ const { Op } = require('sequelize');
 const nodemailer = require('nodemailer');
 const hbs = require('nodemailer-handlebars');
 
+// get expired items
 async function getitems() {
   var date = moment().tz("America/New_York").add(3, 'days').toDate()
     var items =  await models.Item.findAll({
@@ -15,6 +16,8 @@ async function getitems() {
         , is_used:false
       }
   });
+  if (items && items.length != 0 )
+  {
 var expiredItems = [];
   for (const element of items) {
     var userProduct = await models.user_product
@@ -33,7 +36,7 @@ var user =  await models.users
 if (!user)  console.log("Error user not found. ")
 else
 {
-expiredItems.push({name: user.name, email: user.email, item: userProduct.name, expire: element.expiration_date })
+expiredItems.push({name: user.name, email: user.email, itemName: userProduct.name, expire: element.expiration_date, userProduct: userProduct,  item: element })
 }
 }
 else
@@ -46,7 +49,7 @@ emailSetup(emails, expiredItems, 'Hello! - Good Enough', 'expired');
 } catch (e) {
   console.log("Error: " + e.message);
 }
-
+  }
 }
 
 // Setup email
@@ -87,10 +90,44 @@ function emailSetup(users, expiredItems, title, templateName) {
     },
   };
   transporter.sendMail(mailOptions);
-  return;
 
+  // item is expired, remove it from item table and add it to the shopping list table.
+  expiredItems.forEach(item => {
+    let now = moment().tz("America/New_York").format('YYYY-MM-DD')
+    if (item.expire == now)
+    {
+      deleteItem(item.item.id);
+      addShoppingItem (item.item.created_at, item.userProduct.id, item.item.initial_quantity, item.item.cost )
+    }
+  });
+
+  return;
 });
 }
+
+async function deleteItem(itemId) {
+  // delete item
+  const deletedItem = await models.Item.destroy({
+    where: {
+      id: itemId,
+    },
+  });
+  if (deletedItem === 1) 
+    return true ;
+  else 
+    return false;
+}
+
+async function addShoppingItem(date, productId, quantity, cost) {
+  // add item to shopping list
+  const addedShoppingItem = await models.shopping_list_item.create({
+    product_id: productId,
+    quantity: quantity,
+    cost: cost,
+    created_at: date,
+  });
+}
+
 module.exports = {
   getitems,
 };

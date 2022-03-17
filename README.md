@@ -35,5 +35,5 @@ Run the application using the following command:
 | `/views`       | This directory contains the handlebar file that has the design template for the email
 
 
-
+## 📐 Scheduler Architecture:
 

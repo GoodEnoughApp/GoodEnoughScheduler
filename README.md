@@ -19,8 +19,8 @@ You will need to first install all the dependencies by running this command:
 
     $ npm ci
   
-Then you will need an .env file to make sure all the configurations are in place to run the application
-Start the application using command:
+Then you will need a .env file to make sure all the configurations are in place.
+Run the application using the following command:
 
     $ npm start
 
@@ -35,5 +35,5 @@ Start the application using command:
 | `/views`       | This directory contains the handlebar file that has the design template for the email
 
 
-
+## 📐 Scheduler Architecture:
 

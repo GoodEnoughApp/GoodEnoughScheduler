@@ -31,9 +31,10 @@ Run the application using the following command:
 | :------------- | :------------------------------------------------------------------------------------------------------------------------------- |
 | `/config`      | This directory contains database configuration file                                                                              |
 | `/data`        | This directory contains the database operations                                                                                  |
-| `/models`      | This directory contains all the sequelize definitions of the tables in the databse                                               |                                                                      |
+| `/models`      | This directory contains all the sequelize definitions of the tables in the databse                                               |                                                                                                                                                                   |
 | `/views`       | This directory contains the handlebar file that has the design template for the email
-
+| `/_test_`      | This directory contains the test code using Jest                                               |     
+| `/images`      | This directory contains the README file image                                                  |     
 
 ## 📐 Scheduler Architecture:
 <img src="https://raw.githubusercontent.com/GoodEnoughApp/GoodEnoughScheduler/dev/images/diagram.png" data-canonical-src="https://raw.githubusercontent.com/GoodEnoughApp/GoodEnoughScheduler/dev/images/diagram.png" width="600" height="600" />

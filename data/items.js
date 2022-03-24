@@ -110,8 +110,8 @@ function emailSetup(users, expiredItems, title, templateName) {
     let now = moment().tz("America/New_York").format('YYYY-MM-DD')
     if (item.expire == now)
     {
-      deleteItem(item.item.id);
-      addShoppingItem (item.item.created_at, item.userProduct.id, item.item.initial_quantity, item.item.cost )
+     // deleteItem(item.item.id);
+      // addShoppingItem (item.item.created_at, item.userProduct.id, item.item.initial_quantity, item.item.cost )
     }
   });
 });

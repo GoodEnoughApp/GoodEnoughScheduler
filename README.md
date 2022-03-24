@@ -9,9 +9,7 @@ Scheduler is used to run a task everyday and it is hosted on [Heroku](https://ww
 
 2- The user should get notified for three days before the expiration date at 6pm time zone (America/New_York). 
 
-3- If the items are expired, they should be removed from the item table and added to the shopping list table.
-
-4- The Scheduler will ping itself to keep it awake on Heroku. [more details](https://devcenter.heroku.com/articles/free-dyno-hours)
+3- The Scheduler will ping itself to keep it awake on Heroku. [more details](https://devcenter.heroku.com/articles/free-dyno-hours)
 
 ## 🚀 Run:
 To run the project you need the following:

@@ -18,7 +18,7 @@ function startKeepAlive() {
 
   setInterval(function() {
       var options = {
-          host: 'goodenoughdev.herokuapp.com',
+          host: 'goodenoughscheduler.herokuapp.com',
           port: 80,
           path: '/'
       };

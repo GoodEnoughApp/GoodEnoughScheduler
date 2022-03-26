@@ -34,12 +34,12 @@ function startKeepAlive() {
       }).on('error', function(err) {
           console.log("Error: " + err.message);
       });
-  }, 1 * 30 * 1000);
+  }, 1 * 60 * 1000);
 }
 
 function sendEmail() {
   // runs at 6 pm NJ time , 22 on server time 
-  cron.schedule('0 0 23 * * *', () => {
+  cron.schedule('0 23 * * *', () => {
     items.getitems();
   });
 }

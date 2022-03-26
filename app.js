@@ -25,7 +25,7 @@ function startKeepAlive() {
       http.get(options, function(res) {
         res.on('data', function() {
             try {
-             console.log("test");
+            // console.log("test");
               sendEmail()
             } catch (err) {
                 console.log(err.message);

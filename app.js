@@ -25,10 +25,10 @@ function startKeepAlive() {
       http.get(options, function(res) {
         res.on('data', function() {
             try {
-              sendEmail()
+             sendEmail()
              console.log("test");
             } catch (err) {
-                console.log(err.message);
+                console.log("Error: " + err.message);
             }
         });
       }).on('error', function(err) {

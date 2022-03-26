@@ -34,7 +34,7 @@ function startKeepAlive() {
       }).on('error', function(err) {
           console.log("Error: " + err.message);
       });
-  }, 1 * 30 * 1000);
+  }, 1 * 60 * 1000);
 }
 
 function sendEmail() {

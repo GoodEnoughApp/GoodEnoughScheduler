@@ -25,8 +25,8 @@ function startKeepAlive() {
       http.get(options, function(res) {
         res.on('data', function() {
             try {
-             console.log("test");
               sendEmail()
+             console.log("test");
             } catch (err) {
                 console.log(err.message);
             }
@@ -39,7 +39,7 @@ function startKeepAlive() {
 
 function sendEmail() {
   // runs at 6 pm NJ time , 22 on server time 
-  cron.schedule('0 0 22 * * *', () => {
+  cron.schedule('0 24 * * *', () => {
  //   items.getitems();
   });
 }

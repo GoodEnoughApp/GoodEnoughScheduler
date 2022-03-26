@@ -26,7 +26,7 @@ function startKeepAlive() {
         res.on('data', function() {
             try {
               sendEmail()
-             console.log("test");
+            // console.log("test");
             } catch (err) {
                 console.log(err.message);
             }

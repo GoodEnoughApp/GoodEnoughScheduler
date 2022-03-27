@@ -39,7 +39,8 @@ function startKeepAlive() {
 
 function sendEmail() {
   // runs at 6 pm NJ time , 22 on server time 
-  cron.schedule('0 02 * * *', () => {
+  cron.schedule('0 03 * * *', () => {
+   console.log("test2");
     items.getitems();
   });
 }

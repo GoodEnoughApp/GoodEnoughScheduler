@@ -14,7 +14,7 @@ Scheduler is used to run a task everyday and it is hosted on [Heroku](https://ww
 ## 🚀 Run:
 To run the project you need the following:
 
-You will need to first install all the dependencies by running this command:
+Note: You will need to first install all the dependencies by running this command:
 
     $ npm ci
   

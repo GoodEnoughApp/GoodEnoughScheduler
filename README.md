@@ -23,6 +23,7 @@ Run the application using the following command:
 
     $ npm start
 
+**You will need an .env file to make sure all the configurations are in place to run the application**
 
 ## 📋 Structure: 
 

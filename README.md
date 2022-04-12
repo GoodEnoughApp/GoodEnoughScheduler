@@ -14,16 +14,16 @@ Scheduler is used to run a task everyday and it is hosted on [Heroku](https://ww
 ## 🚀 Run:
 To run the project you need the following:
 
-Note: You will need to first install all the dependencies by running this command:
+**Note: You will need an .env file to make sure all the configurations are in place to run the application.**
+
+You will need to install all the dependencies by running this command:
 
     $ npm ci
   
-Then you will need a .env file to make sure all the configurations are in place.
 Run the application using the following command:
 
     $ npm start
 
-**You will need an .env file to make sure all the configurations are in place to run the application.**
 
 ## 📋 Structure: 
 

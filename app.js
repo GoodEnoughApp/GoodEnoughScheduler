@@ -9,6 +9,7 @@ app.listen(process.env.PORT || 3000, () => {
 console.log("We've now got a server!");
 startKeepAlive();
 //items.getitems();
+sendEmail()
 });
 
 function startKeepAlive() {
@@ -25,8 +26,8 @@ function startKeepAlive() {
       http.get(options, function(res) {
         res.on('data', function() {
             try {
-              sendEmail()
-             console.log("test");
+             // sendEmail()
+             console.log("ping request sent.");
             } catch (err) {
                 console.log(err.message);
             }
@@ -39,8 +40,8 @@ function startKeepAlive() {
 
 function sendEmail() {
   // runs at 6 pm NJ time , 22 on server time 
-  cron.schedule('0 4 * * *', () => {
-   console.log("test2");
+  cron.schedule('0 0 22 * * *', () => {
+   //console.log("test2");
     items.getitems();
   });
 }

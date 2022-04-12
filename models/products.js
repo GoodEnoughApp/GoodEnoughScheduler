@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize-cockroachdb');
+
 module.exports = (sequelize) => {
   const Product = sequelize.define(
     'product',
@@ -32,14 +33,9 @@ module.exports = (sequelize) => {
   );
 
   Product.associate = (models) => {
-    Product.belongsTo(models.Category, { foreignKey: 'category_id' });
+    Product.belongsTo(models.category, { foreignKey: 'category_id' });
     Product.hasOne(models.user_product, { foreignKey: 'barcode' });
   };
 
-  syncUser(Product);
   return Product;
-};
-
-const syncUser = async (model) => {
-  return await model.sync();
 };

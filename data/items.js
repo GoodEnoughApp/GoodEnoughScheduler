@@ -9,7 +9,7 @@ const hbs = require('nodemailer-handlebars');
 async function getitems() {
   var date = moment().tz("America/New_York").add(3, 'days').toDate()
   try {
-    var items =  await models.Item.findAll({
+    var items =  await models.item.findAll({
       where: {
         expiration_date: {
           [Op.lte]: date
@@ -21,7 +21,7 @@ async function getitems() {
 catch 
 {
   console.log("Error in fetching items. ")
-  return false; 
+ // return false; 
 }
   if (items && items.length != 0 )
   {
@@ -35,14 +35,14 @@ var expiredItems = [];
 
     if (userProduct)
     {
-var user =  await models.users
+var user =  await models.user
 .findOne({
   where: 
     {id: userProduct.user_id}
 })
 if (!user)  
 {console.log("Error user not found. ")
-return false;
+//return false;
 }
 else
 {
@@ -52,7 +52,7 @@ expiredItems.push({name: user.name, email: user.email, itemName: userProduct.nam
 else
 {
 console.log("Error product not found.")
-return false;
+//return false;
 }
   }
  try {
@@ -61,10 +61,10 @@ emailSetup(emails, expiredItems, 'Hello! - Good Enough', 'expired');
 // console.log(expiredItems);
 } catch (e) {
   console.log("Error: " + e.message);
-  return false;
+  //return false;
 }
   }
-  return true;
+  //return true;
 }
 
 // Setup email
@@ -106,39 +106,39 @@ function emailSetup(users, expiredItems, title, templateName) {
   transporter.sendMail(mailOptions);
 
   // item is expired, remove it from item table and add it to the shopping list table.
-  expiredItems.forEach(item => {
-    let now = moment().tz("America/New_York").format('YYYY-MM-DD')
-    if (item.expire == now)
-    {
+  // expiredItems.forEach(item => {
+  //   let now = moment().tz("America/New_York").format('YYYY-MM-DD')
+  //   if (item.expire == now)
+  //   {
      // deleteItem(item.item.id);
       // addShoppingItem (item.item.created_at, item.userProduct.id, item.item.initial_quantity, item.item.cost )
-    }
-  });
+  //   }
+  // });
 });
 }
 
-async function deleteItem(itemId) {
+// async function deleteItem(itemId) {
   // delete item
-  await models.Item.destroy({
-    where: {
-      id: itemId,
-    },
-  });
+  // await models.Item.destroy({
+  //   where: {
+  //     id: itemId,
+  //   },
+  // });
   // if (deletedItem === 1) 
   //   return true ;
   // else 
   //   return false;
-}
+// }
 
-async function addShoppingItem(date, productId, quantity, cost) {
-  // add item to shopping list
-  await models.shopping_list_item.create({
-    product_id: productId,
-    quantity: quantity,
-    cost: cost,
-    created_at: date,
-  });
-}
+// async function addShoppingItem(date, productId, quantity, cost) {
+//   // add item to shopping list
+//   await models.shopping_list_item.create({
+//     product_id: productId,
+//     quantity: quantity,
+//     cost: cost,
+//     created_at: date,
+//   });
+// }
 
 module.exports = {
   getitems,
